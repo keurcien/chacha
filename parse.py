@@ -25,7 +25,7 @@ def parse_1(X):
     return X
 
 def parse_2(X):
-    #From parse_1, adding 6 most common feature   
+    #From parse_1, with most common feature   
 
     X["num_photos"] = X["photos"].apply(len)
     X["num_features"] = X["features"].apply(len)
@@ -40,8 +40,8 @@ def parse_2(X):
                       "created_year", "created_month", "created_day"]
     
     # Looking at the most common features in an subset
-    size_subset = 100
-    n_features = 10
+    size_subset = 200
+    n_features = 20
     rows = np.random.choice(X.index.values, size_subset)
     sampled_features = X["features"].ix[rows]
     allFeatures=[]
